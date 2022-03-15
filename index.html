@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&family=Rowdies&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body{
+            font-family: 'Oswald', sans-serif;
+            font-family: 'Rowdies', cursive;
+            background-color: rgb(216, 216, 231);
+        }
+        .centerDiv{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+        }
+        h1{
+            width: 63%;
+            margin:60px auto;
+            font-size: 50px;
+            font-weight: bolder;
+            color: red;
+            /* background-color: aqua;  */
+        }
+        label{
+            color: blue;
+            font-size: 40px;
+            font-weight: bolder;
+            text-align: center;
+            margin:50px 10px;
+            
+        }
+        #nameid{
+            margin: 15px 40px;
+            height: 40px;
+            padding: 5px;
+            font-size: 25px;
+            border-radius: 25px;
+        }
+        .imgdiv{
+            margin:30px auto;
+        }
+        .btn{
+            height: 50px;
+            font-size: 20px;
+            width: 200px;
+            border-radius: 25px;
+            background-color:rgb(202, 202, 235);
+            font-weight: bold;
+            border: 1px solid black;
+            font-family: 'Rowdies', cursive;
+        }
+        .btn:hover{
+            background-color:rgb(191, 191, 224) ;
+            font-weight: bolder;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>SHOWING IMAGES AS PER YOUR NAME!!</h1>
+        <div class="centerDiv">
+            <div class="details">
+                <label>ENTER YOUR NAME</label><br>
+                <input type="text" name="" id="nameid">
+            </div>
+            <div class="imgdiv">
+                <img src="new.jpg" width="200" height="200" class="imgchange">
+            </div>
+            <button class="btn">Check It</button>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.slim.js">
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('button').click(function(){
+                    const name=$('#nameid').val();
+                    // alert(name);
+                    $('.imgchange').attr('src',`https://joeschmoe.io/api/v1/${name}`);
+                })
+            })
+        </script>
+    </section>
+</body>
+</html>
